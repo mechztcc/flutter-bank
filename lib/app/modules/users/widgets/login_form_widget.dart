@@ -53,6 +53,8 @@ class LoginFormWidget extends StatelessWidget {
                     child: ElevatedButton(
                       onPressed: () {},
                       child: Text('Entrar'),
+                      style: ElevatedButton.styleFrom(
+                          primary: Theme.of(context).colorScheme.secondary),
                     ),
                   ),
                 ),

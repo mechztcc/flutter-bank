@@ -13,7 +13,7 @@ class SplashPageState extends State<SplashPage> {
   final SplashStore store = Modular.get();
 
   Function? _navigate() {
-    Modular.to.pushReplacementNamed('/users');
+    Modular.to.pushReplacementNamed('/users/home');
   }
 
   @override
@@ -38,7 +38,7 @@ class SplashPageState extends State<SplashPage> {
                   Icons.wallet_membership_outlined,
                 ),
                 label: Text('Entrar'),
-              )
+              ),
             ],
           ),
         ],

@@ -6,7 +6,9 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Slidy',
-      theme: ThemeData(primarySwatch: Colors.indigo),
+      theme: ThemeData(
+          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.pink)
+              .copyWith(secondary: Colors.deepPurpleAccent)),
     ).modular();
   }
 }

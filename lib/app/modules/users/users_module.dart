@@ -1,3 +1,5 @@
+import 'package:flutter_bank/app/modules/users/screens/create_page.dart';
+import 'package:flutter_bank/app/modules/users/screens/home_page.dart';
 import 'package:flutter_bank/app/modules/users/screens/login_page.dart';
 
 import 'package:flutter_bank/app/modules/users/users_store.dart';
@@ -11,6 +13,8 @@ class UsersModule extends Module {
 
   @override
   final List<ModularRoute> routes = [
-    ChildRoute('/', child: (_, args) => LoginPage()),
+    ChildRoute('/home', child: (_, args) => HomePage()),
+    ChildRoute('/login', child: (_, args) => LoginPage()),
+    ChildRoute('/create', child: (_, args) => CreatePage()),
   ];
 }
