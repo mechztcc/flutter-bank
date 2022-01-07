@@ -15,7 +15,12 @@ class LoginPageState extends State<LoginPage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: LoginFormWidget(),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          LoginFormWidget(),
+        ],
+      ),
     );
   }
 }

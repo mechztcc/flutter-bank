@@ -14,6 +14,22 @@ class LoginFormWidget extends StatelessWidget {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: CircleAvatar(
+                radius: 40,
+                backgroundImage: NetworkImage(
+                    'https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/1024/Bitcoin-BTC-icon.png'),
+              ),
+            ),
+            Text(
+              'Welcome to UBank',
+              style: TextStyle(
+                fontSize: 40,
+                color: Theme.of(context).colorScheme.secondary,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             TextFormField(
               controller: _emailController,
               decoration: InputDecoration(
@@ -27,12 +43,15 @@ class LoginFormWidget extends StatelessWidget {
               ),
               obscureText: true,
             ),
-            Row(
+            Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text('Entrar'),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text('Entrar'),
+                  ),
                 ),
                 TextButton(
                   onPressed: () {},
