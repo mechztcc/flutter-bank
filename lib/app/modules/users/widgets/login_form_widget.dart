@@ -11,7 +11,7 @@ class LoginFormWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Form(
       child: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(30.0),
         child: Column(
           children: [
             const Padding(
@@ -47,7 +47,7 @@ class LoginFormWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  padding: const EdgeInsets.symmetric(vertical: 0),
                   child: SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
