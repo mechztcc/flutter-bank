@@ -56,14 +56,8 @@ class HomePageState extends State<HomePage> {
                 )
               ],
             ),
-            const Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: const Text(
-                'Bem-vindo ao BBank',
-                style: TextStyle(
-                  fontSize: 20,
-                ),
-              ),
+            SizedBox(
+              height: 20,
             ),
             ElevatedButton.icon(
               onPressed: () {
