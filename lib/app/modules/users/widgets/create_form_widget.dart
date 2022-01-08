@@ -17,55 +17,51 @@ class _CreateFormWidgetState extends State<CreateFormWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Center(
-          child: Image.asset(
-            'assets/images/wallet.png',
-            fit: BoxFit.cover,
-            height: 200,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
-          child: Form(
-            child: Column(
-              children: [
-                TextFormField(
-                  decoration: const InputDecoration(label: Text('CPF')),
-                ),
-                TextFormField(
-                  decoration: const InputDecoration(label: Text('Name')),
-                ),
-                TextFormField(
-                  decoration: const InputDecoration(
-                    label: Text('E-mail'),
-                  ),
-                ),
-                TextFormField(
-                  decoration: const InputDecoration(
-                    label: Text('Password'),
-                  ),
-                  obscureText: true,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 40),
-                  child: SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text('Continue'),
-                      style: ElevatedButton.styleFrom(
-                          primary: Theme.of(context).colorScheme.secondary),
+    return Container(
+      color: Colors.black,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Form(
+              child: Column(
+                children: [
+                  TextFormField(
+                    decoration: const InputDecoration(
+                      label: Text(
+                        'CPF',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.deepOrange)),
                     ),
                   ),
-                )
-              ],
+                  Padding(
+                    padding: const EdgeInsets.only(top: 40),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Continue',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                            primary: Theme.of(context).colorScheme.secondary),
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -12,12 +12,17 @@ class LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          LoginFormWidget(),
-        ],
+      appBar: AppBar(
+        backgroundColor: Colors.deepOrange[400],
+      ),
+      body: Container(
+        color: Colors.black,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            LoginFormWidget(),
+          ],
+        ),
       ),
     );
   }

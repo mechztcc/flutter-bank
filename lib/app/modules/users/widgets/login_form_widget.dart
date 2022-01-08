@@ -16,32 +16,49 @@ class LoginFormWidget extends StatelessWidget {
           children: [
             const Padding(
               padding: const EdgeInsets.symmetric(vertical: 10),
-              child: CircleAvatar(
-                radius: 40,
-                backgroundImage: NetworkImage(
-                    'https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/1024/Bitcoin-BTC-icon.png'),
-              ),
             ),
             Text(
-              'Welcome to BBank',
+              'Bem-vindo',
               style: TextStyle(
                 fontSize: 40,
                 color: Theme.of(context).colorScheme.secondary,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            TextFormField(
-              controller: _emailController,
-              decoration: const InputDecoration(
-                label: Text('E-mail'),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8),
+              child: TextFormField(
+                controller: _emailController,
+                decoration: const InputDecoration(
+                  label: Text(
+                    'E-mail',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.deepOrange),
+                  ),
+                ),
               ),
             ),
-            TextFormField(
-              controller: _passwordController,
-              decoration: const InputDecoration(
-                label: Text('Senha'),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8),
+              child: TextFormField(
+                controller: _passwordController,
+                decoration: const InputDecoration(
+                  label: Text(
+                    'Senha',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.deepOrange),
+                  ),
+                ),
+                obscureText: true,
               ),
-              obscureText: true,
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -52,7 +69,12 @@ class LoginFormWidget extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text('Entrar'),
+                      child: Text(
+                        'Entrar',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
                       style: ElevatedButton.styleFrom(
                           primary: Theme.of(context).colorScheme.secondary),
                     ),

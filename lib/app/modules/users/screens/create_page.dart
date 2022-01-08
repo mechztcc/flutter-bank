@@ -13,7 +13,7 @@ class CreatePageState extends State<CreatePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.title),
+          backgroundColor: Colors.deepOrange[400],
         ),
         body: CreateFormWidget());
   }
