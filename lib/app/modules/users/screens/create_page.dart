@@ -11,10 +11,6 @@ class CreatePage extends StatefulWidget {
 class CreatePageState extends State<CreatePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.deepOrange[400],
-        ),
-        body: CreateFormWidget());
+    return Scaffold(body: CreateFormWidget());
   }
 }

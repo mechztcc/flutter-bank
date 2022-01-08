@@ -11,6 +11,7 @@ class SplashPage extends StatefulWidget {
 
 class SplashPageState extends State<SplashPage> {
   final SplashStore store = Modular.get();
+  double size = 50.0;
 
   Function? _navigate() {
     Modular.to.pushReplacementNamed('/users/home');
@@ -18,30 +19,36 @@ class SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
+    Future.delayed(
+      Duration(seconds: 3),
+    ).then((value) {
+      _navigate();
+    });
+
     return Scaffold(
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              CircleAvatar(
-                radius: 80,
-                backgroundImage: NetworkImage(
-                  'https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/1024/Bitcoin-BTC-icon.png',
+      body: Container(
+        color: Colors.black,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Center(
+                child: CircularProgressIndicator(
+                  color: Colors.deepOrange[400],
                 ),
               ),
-              ElevatedButton.icon(
-                onPressed: _navigate,
-                icon: Icon(
-                  Icons.wallet_membership_outlined,
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Text(
+                  'Carregando',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
-                label: Text('Entrar'),
-              ),
-            ],
-          ),
-        ],
+              )
+            ]),
+          ],
+        ),
       ),
     );
   }

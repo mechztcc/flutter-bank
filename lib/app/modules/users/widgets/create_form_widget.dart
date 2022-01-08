@@ -11,9 +11,7 @@ class CreateFormWidget extends StatefulWidget {
 }
 
 class _CreateFormWidgetState extends State<CreateFormWidget> {
-  bool _isPersonal = false;
-
-  bool isCompany = false;
+  bool isCpf = true;
 
   @override
   Widget build(BuildContext context) {
@@ -27,25 +25,30 @@ class _CreateFormWidgetState extends State<CreateFormWidget> {
             child: Form(
               child: Column(
                 children: [
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      label: Text(
-                        'CPF',
-                        style: TextStyle(
-                          color: Colors.white,
+                  if (isCpf == true)
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        label: Text(
+                          'CPF',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
                         ),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.deepOrange)),
                       ),
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.deepOrange)),
                     ),
-                  ),
                   Padding(
                     padding: const EdgeInsets.only(top: 40),
                     child: SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
+                        onPressed: () {
+                          setState(() {
+                            isCpf = !isCpf;
+                          });
+                        },
+                        child: const Text(
                           'Continue',
                           style: TextStyle(
                             color: Colors.white,
