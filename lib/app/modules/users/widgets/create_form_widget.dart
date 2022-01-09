@@ -36,6 +36,29 @@ class _CreateFormWidgetState extends State<CreateFormWidget> {
     print(isPassword);
   }
 
+  void handleBack() {
+    if (isName == true) {
+      isName = false;
+      isCpf = true;
+      isEmail = false;
+      isPassword = false;
+    }
+
+    if (isEmail == true) {
+      isName = true;
+      isCpf = false;
+      isEmail = false;
+      isPassword = false;
+    }
+
+    if (isPassword == true) {
+      isName = false;
+      isCpf = false;
+      isEmail = true;
+      isPassword = false;
+    }
+  }
+
   void _showName() {
     isCpf = false;
     isName = true;
@@ -82,7 +105,8 @@ class _CreateFormWidgetState extends State<CreateFormWidget> {
                           ),
                         ),
                         enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.deepOrange)),
+                          borderSide: BorderSide(color: Colors.deepOrange),
+                        ),
                       ),
                     ),
                   if (isName == true)
@@ -125,6 +149,7 @@ class _CreateFormWidgetState extends State<CreateFormWidget> {
                     ),
                   if (isPassword == true)
                     TextFormField(
+                      obscureText: true,
                       style: TextStyle(
                         color: Colors.white,
                       ),
@@ -163,6 +188,23 @@ class _CreateFormWidgetState extends State<CreateFormWidget> {
                       ),
                     ),
                   ),
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          handleBack();
+                        });
+                      },
+                      child: Text(
+                        'Voltar',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(primary: Colors.black),
+                    ),
+                  )
                 ],
               ),
             ),
