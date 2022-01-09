@@ -22,7 +22,7 @@ class LoginFormWidget extends StatelessWidget {
               'Bem-vindo',
               style: TextStyle(
                 fontSize: 40,
-                color: Theme.of(context).colorScheme.secondary,
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
             ),

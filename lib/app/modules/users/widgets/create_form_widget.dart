@@ -98,82 +98,126 @@ class _CreateFormWidgetState extends State<CreateFormWidget> {
               child: Column(
                 children: [
                   if (isCpf == true)
-                    TextFormField(
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                      decoration: const InputDecoration(
-                        label: Text(
-                          'CPF',
+                    Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 10),
+                          child: Text(
+                            'Informe o CPF do titular da conta',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        TextFormField(
                           style: TextStyle(
                             color: Colors.white,
                           ),
+                          decoration: const InputDecoration(
+                            label: Text(
+                              'CPF',
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.deepOrange),
+                            ),
+                          ),
                         ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.deepOrange),
-                        ),
-                      ),
+                      ],
                     ),
                   if (isName == true)
-                    TextFormField(
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                      decoration: const InputDecoration(
-                        label: Text(
-                          'Nome completo',
+                    Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 10),
+                          child: Text(
+                            'Nome que será exibido no Cartão',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        TextFormField(
                           style: TextStyle(
                             color: Colors.white,
                           ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.deepOrange,
+                          decoration: const InputDecoration(
+                            label: Text(
+                              'Nome completo',
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.deepOrange,
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                      ],
                     ),
                   if (isEmail == true)
-                    TextFormField(
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                      decoration: const InputDecoration(
-                        label: Text(
-                          'E-mail',
+                    Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 10),
+                          child: Text(
+                            'Informe um E-mail válido',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        TextFormField(
                           style: TextStyle(
                             color: Colors.white,
                           ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.deepOrange,
+                          decoration: const InputDecoration(
+                            label: Text(
+                              'E-mail',
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.deepOrange,
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                      ],
                     ),
                   if (isPassword == true)
-                    TextFormField(
-                      obscureText: true,
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                      decoration: const InputDecoration(
-                        label: Text(
-                          'Senha',
+                    Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 10),
+                          child: Text(
+                            'A senha deve conter no mínimo 6 dígitos',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        TextFormField(
+                          obscureText: true,
                           style: TextStyle(
                             color: Colors.white,
                           ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.deepOrange,
+                          decoration: const InputDecoration(
+                            label: Text(
+                              'Senha',
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.deepOrange,
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                      ],
                     ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 40),
+                    padding: const EdgeInsets.only(top: 20),
                     child: SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
