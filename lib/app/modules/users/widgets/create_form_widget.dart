@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class CreateFormWidget extends StatefulWidget {
   final String title;
@@ -37,6 +38,10 @@ class _CreateFormWidgetState extends State<CreateFormWidget> {
   }
 
   void handleBack() {
+    if (isCpf == true) {
+      Modular.to.pop();
+    }
+
     if (isName == true) {
       isName = false;
       isCpf = true;

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class LoginFormWidget extends StatelessWidget {
   final String title;
@@ -81,7 +82,9 @@ class LoginFormWidget extends StatelessWidget {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Modular.to.pushReplacementNamed('/users/forgot');
+                  },
                   child: Text('Esqueceu a senha?'),
                 ),
               ],

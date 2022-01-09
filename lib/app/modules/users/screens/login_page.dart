@@ -12,9 +12,6 @@ class LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.deepOrange[400],
-      ),
       body: Container(
         color: Colors.black,
         child: Column(

@@ -1,4 +1,5 @@
 import 'package:flutter_bank/app/modules/users/screens/create_page.dart';
+import 'package:flutter_bank/app/modules/users/screens/forgot_password_page.dart';
 import 'package:flutter_bank/app/modules/users/screens/home_page.dart';
 import 'package:flutter_bank/app/modules/users/screens/login_page.dart';
 
@@ -16,5 +17,6 @@ class UsersModule extends Module {
     ChildRoute('/home', child: (_, args) => HomePage()),
     ChildRoute('/login', child: (_, args) => LoginPage()),
     ChildRoute('/create', child: (_, args) => CreatePage()),
+    ChildRoute('/forgot', child: (_, args) => ForgotPasswordPage()),
   ];
 }
