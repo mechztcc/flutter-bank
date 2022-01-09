@@ -13,6 +13,50 @@ class CreateFormWidget extends StatefulWidget {
 class _CreateFormWidgetState extends State<CreateFormWidget> {
   bool isCpf = true;
 
+  bool isName = false;
+  bool isEmail = false;
+  bool isPassword = false;
+
+  void handleInput() {
+    if (isCpf == true) {
+      _showName();
+      return;
+    }
+    if (isName == true) {
+      _showEmail();
+      return;
+    }
+
+    if (isEmail == true) {
+      _showPassword();
+      return;
+    }
+    print(isName);
+    print(isEmail);
+    print(isPassword);
+  }
+
+  void _showName() {
+    isCpf = false;
+    isName = true;
+    isEmail = false;
+    isPassword = false;
+  }
+
+  void _showEmail() {
+    isCpf = false;
+    isName = false;
+    isEmail = true;
+    isPassword = false;
+  }
+
+  void _showPassword() {
+    isCpf = false;
+    isName = false;
+    isEmail = false;
+    isPassword = true;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,6 +71,9 @@ class _CreateFormWidgetState extends State<CreateFormWidget> {
                 children: [
                   if (isCpf == true)
                     TextFormField(
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
                       decoration: const InputDecoration(
                         label: Text(
                           'CPF',
@@ -38,6 +85,63 @@ class _CreateFormWidgetState extends State<CreateFormWidget> {
                             borderSide: BorderSide(color: Colors.deepOrange)),
                       ),
                     ),
+                  if (isName == true)
+                    TextFormField(
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                      decoration: const InputDecoration(
+                        label: Text(
+                          'Nome completo',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.deepOrange,
+                          ),
+                        ),
+                      ),
+                    ),
+                  if (isEmail == true)
+                    TextFormField(
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                      decoration: const InputDecoration(
+                        label: Text(
+                          'E-mail',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.deepOrange,
+                          ),
+                        ),
+                      ),
+                    ),
+                  if (isPassword == true)
+                    TextFormField(
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                      decoration: const InputDecoration(
+                        label: Text(
+                          'Senha',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.deepOrange,
+                          ),
+                        ),
+                      ),
+                    ),
                   Padding(
                     padding: const EdgeInsets.only(top: 40),
                     child: SizedBox(
@@ -45,7 +149,7 @@ class _CreateFormWidgetState extends State<CreateFormWidget> {
                       child: ElevatedButton(
                         onPressed: () {
                           setState(() {
-                            isCpf = !isCpf;
+                            handleInput();
                           });
                         },
                         child: const Text(
@@ -58,7 +162,7 @@ class _CreateFormWidgetState extends State<CreateFormWidget> {
                             primary: Theme.of(context).colorScheme.secondary),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
