@@ -141,7 +141,7 @@ class DashboardPageState extends State<DashboardPage> {
                                 child: Text(
                                   'Funcionalidade',
                                   style: TextStyle(
-                                    fontWeight: FontWeight.bold,
+                                    fontWeight: FontWeight.w500,
                                   ),
                                 ),
                               ),
@@ -154,7 +154,50 @@ class DashboardPageState extends State<DashboardPage> {
                   scrollDirection: Axis.horizontal,
                 ),
               ),
-            )
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 40,
+              ),
+              child: Column(
+                children: [
+                  Row(
+                    children: const [
+                      Text(
+                        'Histórico',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: 300,
+                    child: ListView.builder(
+                      itemCount: 1,
+                      itemBuilder: (context, index) => ListTile(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        tileColor: Colors.white,
+                        leading: Icon(
+                          Icons.shopping_bag,
+                          color: Colors.deepOrange,
+                        ),
+                        title: Text(
+                          'Nome da compra',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        subtitle: Text('R\$ 22.00'),
+                        trailing: Icon(Icons.info_outline_rounded),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),
