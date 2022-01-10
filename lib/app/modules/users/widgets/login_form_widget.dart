@@ -69,7 +69,9 @@ class LoginFormWidget extends StatelessWidget {
                   child: SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Modular.to.pushReplacementNamed('/dashboard/');
+                      },
                       child: Text(
                         'Entrar',
                         style: TextStyle(
