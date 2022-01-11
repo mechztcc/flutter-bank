@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bank/app/modules/dashboard/dashboard_store.dart';
 import 'package:flutter_bank/app/modules/dashboard/models/functionalities.dart';
+import 'package:provider/provider.dart';
 
 class FunctionsWidget extends StatelessWidget {
   final String title;
 
-  final Functionalities? funcs;
-
-  const FunctionsWidget({Key? key, this.title = "FunctionsWidget", this.funcs})
+  const FunctionsWidget({Key? key, this.title = "FunctionsWidget"})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final store = Provider.of<DashboardStore>(context);
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
       child: SizedBox(
         height: 80,
         child: ListView.builder(
-          itemCount: 5,
+          itemCount: store.funcs.length,
           itemBuilder: (_, i) => Padding(
             padding: const EdgeInsets.all(2.0),
             child: Container(
@@ -28,20 +30,20 @@ class FunctionsWidget extends StatelessWidget {
               child: Column(
                 children: [
                   Row(
-                    children: const [
+                    children: [
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Icon(Icons.flip_to_back_sharp),
+                        child: store.getIcon(i + 1),
                       ),
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    children: const [
+                    children: [
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          'Funcionalidade',
+                          '${store.funcs[i].name}',
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                           ),

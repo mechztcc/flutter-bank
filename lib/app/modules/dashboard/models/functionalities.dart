@@ -1,7 +1,9 @@
+import 'package:flutter/widgets.dart';
+
 class Functionalities {
   final int id;
   final String name;
-  final String iconName;
+  final Icon iconName;
 
   Functionalities({
     required this.id,

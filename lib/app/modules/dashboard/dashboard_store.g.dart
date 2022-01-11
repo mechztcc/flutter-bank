@@ -9,18 +9,18 @@ part of 'dashboard_store.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$DashboardStore on _DashboardStoreBase, Store {
-  final _$valueAtom = Atom(name: '_DashboardStoreBase.value');
+  final _$funcsAtom = Atom(name: '_DashboardStoreBase.funcs');
 
   @override
-  int get value {
-    _$valueAtom.reportRead();
-    return super.value;
+  List<Functionalities> get funcs {
+    _$funcsAtom.reportRead();
+    return super.funcs;
   }
 
   @override
-  set value(int value) {
-    _$valueAtom.reportWrite(value, super.value, () {
-      super.value = value;
+  set funcs(List<Functionalities> value) {
+    _$funcsAtom.reportWrite(value, super.funcs, () {
+      super.funcs = value;
     });
   }
 
@@ -28,11 +28,11 @@ mixin _$DashboardStore on _DashboardStoreBase, Store {
       ActionController(name: '_DashboardStoreBase');
 
   @override
-  void increment() {
+  Icon getIcon(int id) {
     final _$actionInfo = _$_DashboardStoreBaseActionController.startAction(
-        name: '_DashboardStoreBase.increment');
+        name: '_DashboardStoreBase.getIcon');
     try {
-      return super.increment();
+      return super.getIcon(id);
     } finally {
       _$_DashboardStoreBaseActionController.endAction(_$actionInfo);
     }
@@ -41,7 +41,7 @@ mixin _$DashboardStore on _DashboardStoreBase, Store {
   @override
   String toString() {
     return '''
-value: ${value}
+funcs: ${funcs}
     ''';
   }
 }
