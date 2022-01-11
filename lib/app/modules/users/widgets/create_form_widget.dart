@@ -119,7 +119,8 @@ class _CreateFormWidgetState extends State<CreateFormWidget> {
                               ),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.deepOrange),
+                              borderSide:
+                                  BorderSide(color: Colors.indigoAccent),
                             ),
                           ),
                         ),
@@ -147,9 +148,8 @@ class _CreateFormWidgetState extends State<CreateFormWidget> {
                               ),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Colors.deepOrange,
-                              ),
+                              borderSide:
+                                  BorderSide(color: Colors.indigoAccent),
                             ),
                           ),
                         ),
@@ -177,9 +177,8 @@ class _CreateFormWidgetState extends State<CreateFormWidget> {
                               ),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Colors.deepOrange,
-                              ),
+                              borderSide:
+                                  BorderSide(color: Colors.indigoAccent),
                             ),
                           ),
                         ),
@@ -208,9 +207,8 @@ class _CreateFormWidgetState extends State<CreateFormWidget> {
                               ),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Colors.deepOrange,
-                              ),
+                              borderSide:
+                                  BorderSide(color: Colors.indigoAccent),
                             ),
                           ),
                         ),

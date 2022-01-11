@@ -34,7 +34,7 @@ class SplashPageState extends State<SplashPage> {
             Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               Center(
                 child: CircularProgressIndicator(
-                  color: Colors.deepOrange[400],
+                  color: Colors.indigoAccent,
                 ),
               ),
               Padding(

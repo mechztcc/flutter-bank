@@ -38,7 +38,7 @@ class LoginFormWidget extends StatelessWidget {
                     ),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.deepOrange),
+                    borderSide: BorderSide(color: Colors.indigoAccent),
                   ),
                 ),
               ),
@@ -55,7 +55,7 @@ class LoginFormWidget extends StatelessWidget {
                     ),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.deepOrange),
+                    borderSide: BorderSide(color: Colors.indigoAccent),
                   ),
                 ),
                 obscureText: true,
@@ -82,6 +82,12 @@ class LoginFormWidget extends StatelessWidget {
                           primary: Theme.of(context).colorScheme.secondary),
                     ),
                   ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Modular.to.pushReplacementNamed('/users/create');
+                  },
+                  child: Text('Novo Usuário?'),
                 ),
                 TextButton(
                   onPressed: () {

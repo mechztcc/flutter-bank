@@ -25,7 +25,7 @@ class HomePageState extends State<HomePage> {
                   height: 200,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Colors.deepOrange[400],
+                    color: Colors.indigoAccent,
                     // boxShadow: [
                     //   BoxShadow(
                     //     color: Colors.deepOrange.withOpacity(0.8),
@@ -74,7 +74,7 @@ class HomePageState extends State<HomePage> {
                 ),
               ),
               style: ElevatedButton.styleFrom(
-                primary: Colors.deepOrange[400],
+                primary: Colors.indigoAccent,
               ),
             ),
             TextButton.icon(

@@ -1,9 +1,11 @@
+import 'package:flutter_bank/app/modules/dashboard/widgets/history_list_widget.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_bank/app/modules/dashboard/dashboard_store.dart';
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatefulWidget {
   final String title;
+
   const DashboardPage({Key? key, this.title = 'DashboardPage'})
       : super(key: key);
   @override
@@ -13,10 +15,37 @@ class DashboardPage extends StatefulWidget {
 class DashboardPageState extends State<DashboardPage> {
   final DashboardStore store = Modular.get();
 
+  void _navigate(int index) {
+    if (index == 1) {
+      Modular.to.pushReplacementNamed('/users/login');
+    }
+    if (index == 2) {
+      Modular.to.pushReplacementNamed('settings');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: _navigate,
+        backgroundColor: Colors.white,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Buscar',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.login),
+            label: 'Sair',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Configurações',
+          ),
+        ],
+      ),
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -32,7 +61,7 @@ class DashboardPageState extends State<DashboardPage> {
                     width: 320,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.deepOrange,
+                      color: Colors.indigoAccent,
                     ),
                     child: Column(
                       children: [
@@ -171,33 +200,10 @@ class DashboardPageState extends State<DashboardPage> {
                       )
                     ],
                   ),
-                  SizedBox(
-                    height: 300,
-                    child: ListView.builder(
-                      itemCount: 1,
-                      itemBuilder: (context, index) => ListTile(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        tileColor: Colors.white,
-                        leading: Icon(
-                          Icons.shopping_bag,
-                          color: Colors.deepOrange,
-                        ),
-                        title: Text(
-                          'Nome da compra',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                        subtitle: Text('R\$ 22.00'),
-                        trailing: Icon(Icons.info_outline_rounded),
-                      ),
-                    ),
-                  )
                 ],
               ),
             ),
+            HistoryListWidget()
           ],
         ),
       ),

@@ -54,7 +54,7 @@ class ForgotPasswordPageState extends State<ForgotPasswordPage> {
                           ),
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.deepOrange),
+                          borderSide: BorderSide(color: Colors.indigoAccent),
                         ),
                       ),
                     ),
@@ -71,7 +71,7 @@ class ForgotPasswordPageState extends State<ForgotPasswordPage> {
                         style: TextStyle(color: Colors.white),
                       ),
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.deepOrange,
+                        primary: Colors.indigoAccent,
                       ),
                     ),
                   ),
