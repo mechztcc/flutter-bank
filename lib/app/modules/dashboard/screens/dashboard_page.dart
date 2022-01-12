@@ -90,7 +90,7 @@ class DashboardPageState extends State<DashboardPage> {
                                 Icons.settings,
                                 color: Colors.white,
                               ),
-                            )
+                            ),
                           ],
                         ),
                         Row(

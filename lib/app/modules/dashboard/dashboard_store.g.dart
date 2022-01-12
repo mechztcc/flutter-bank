@@ -24,6 +24,21 @@ mixin _$DashboardStore on _DashboardStoreBase, Store {
     });
   }
 
+  final _$typesPixAtom = Atom(name: '_DashboardStoreBase.typesPix');
+
+  @override
+  List<KeyPix> get typesPix {
+    _$typesPixAtom.reportRead();
+    return super.typesPix;
+  }
+
+  @override
+  set typesPix(List<KeyPix> value) {
+    _$typesPixAtom.reportWrite(value, super.typesPix, () {
+      super.typesPix = value;
+    });
+  }
+
   final _$_DashboardStoreBaseActionController =
       ActionController(name: '_DashboardStoreBase');
 
@@ -39,9 +54,21 @@ mixin _$DashboardStore on _DashboardStoreBase, Store {
   }
 
   @override
+  Icon getPixIcon(int id) {
+    final _$actionInfo = _$_DashboardStoreBaseActionController.startAction(
+        name: '_DashboardStoreBase.getPixIcon');
+    try {
+      return super.getPixIcon(id);
+    } finally {
+      _$_DashboardStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
-funcs: ${funcs}
+funcs: ${funcs},
+typesPix: ${typesPix}
     ''';
   }
 }

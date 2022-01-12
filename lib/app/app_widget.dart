@@ -9,7 +9,9 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        Provider<DashboardStore>(create: (context) => DashboardStore()),
+        Provider<DashboardStore>(
+          create: (context) => DashboardStore(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

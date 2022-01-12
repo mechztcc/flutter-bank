@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bank/app/modules/dashboard/models/functionalities.dart';
+import 'package:flutter_bank/app/modules/dashboard/models/key_pix.dart';
 import 'package:mobx/mobx.dart';
 
 part 'dashboard_store.g.dart';
@@ -29,6 +30,11 @@ abstract class _DashboardStoreBase with Store {
       name: 'Depositar',
       iconName: Icon(Icons.monetization_on),
     ),
+    Functionalities(
+      id: 5,
+      name: 'Pagar',
+      iconName: Icon(Icons.monetization_on),
+    ),
   ];
 
   @action
@@ -41,7 +47,31 @@ abstract class _DashboardStoreBase with Store {
       return Icon(Icons.transfer_within_a_station);
     } else if (id == 4) {
       return Icon(Icons.monetization_on);
-    } else
-      return Icon(Icons.ac_unit);
+    } else if (id == 5) {
+      return Icon(Icons.payments_rounded);
+    }
+    return Icon(Icons.ac_unit);
+  }
+
+  @observable
+  List<KeyPix> typesPix = [
+    KeyPix(id: 1, name: 'E-mail'),
+    KeyPix(id: 2, name: 'Chave Aleatória'),
+    KeyPix(id: 3, name: 'CPF'),
+    KeyPix(id: 4, name: 'Telefone'),
+  ];
+
+  @action
+  Icon getPixIcon(int id) {
+    if (id == 1) {
+      return Icon(Icons.email);
+    } else if (id == 2) {
+      return Icon(Icons.vpn_key_outlined);
+    } else if (id == 3) {
+      return Icon(Icons.person_add);
+    } else if (id == 4) {
+      return Icon(Icons.phone);
+    }
+    return Icon(Icons.ac_unit);
   }
 }

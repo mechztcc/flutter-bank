@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bank/app/modules/dashboard/dashboard_store.dart';
 import 'package:flutter_bank/app/modules/dashboard/models/functionalities.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:provider/provider.dart';
 
 class FunctionsWidget extends StatelessWidget {
@@ -8,6 +9,12 @@ class FunctionsWidget extends StatelessWidget {
 
   const FunctionsWidget({Key? key, this.title = "FunctionsWidget"})
       : super(key: key);
+
+  void _navigate(String id) {
+    if (id == 2.toString()) {
+      Modular.to.pushReplacementNamed('pix-area');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,27 +36,36 @@ class FunctionsWidget extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: store.getIcon(i + 1),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          '${store.funcs[i].name}',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                          ),
+                  InkWell(
+                    onTap: () {
+                      _navigate('${store.funcs[i].id}');
+                    },
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: store.getIcon(i + 1),
+                            ),
+                          ],
                         ),
-                      ),
-                    ],
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '${store.funcs[i].name}',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
