@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bank/app/modules/dashboard/dashboard_store.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:provider/provider.dart';
 
 class PixAreaFormWidget extends StatelessWidget {
@@ -22,6 +23,23 @@ class PixAreaFormWidget extends StatelessWidget {
         children: [
           const SizedBox(
             height: 40,
+          ),
+          const Text(
+            'Área PIX',
+            style: TextStyle(
+              fontSize: 40,
+              color: Colors.white,
+            ),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          const Text(
+            'Selecione o tipo da chave ',
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+            ),
           ),
           SizedBox(
             height: _height * 0.1,
@@ -46,7 +64,7 @@ class PixAreaFormWidget extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
             child: SizedBox(
-              height: _height * 0.3,
+              height: _height * 0.5,
               width: _width,
               child: Form(
                 child: Column(
@@ -84,6 +102,23 @@ class PixAreaFormWidget extends StatelessWidget {
                         ),
                       ),
                     ),
+                    TextFormField(
+                      maxLines: 3,
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                      decoration: const InputDecoration(
+                        label: Text(
+                          'Mensagem',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.indigoAccent),
+                        ),
+                      ),
+                    ),
                     SizedBox(
                       width: _width,
                       child: ElevatedButton(
@@ -94,6 +129,24 @@ class PixAreaFormWidget extends StatelessWidget {
                         child: Text(
                           'Enviar',
                           style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: _width,
+                      child: ElevatedButton.icon(
+                        onPressed: () {
+                          Modular.to.pushReplacementNamed('/dashboard/');
+                        },
+                        icon: Icon(Icons.arrow_back, color: Colors.white),
+                        label: Text(
+                          'Voltar',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.transparent,
                         ),
                       ),
                     ),
