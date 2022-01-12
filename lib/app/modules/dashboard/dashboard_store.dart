@@ -64,14 +64,26 @@ abstract class _DashboardStoreBase with Store {
   @action
   Icon getPixIcon(int id) {
     if (id == 1) {
-      return Icon(Icons.email);
+      return const Icon(
+        Icons.email,
+        color: Colors.indigoAccent,
+      );
     } else if (id == 2) {
-      return Icon(Icons.vpn_key_outlined);
+      return const Icon(
+        Icons.vpn_key_outlined,
+        color: Colors.indigoAccent,
+      );
     } else if (id == 3) {
-      return Icon(Icons.person_add);
+      return const Icon(
+        Icons.person_add,
+        color: Colors.indigoAccent,
+      );
     } else if (id == 4) {
-      return Icon(Icons.phone);
+      return const Icon(
+        Icons.phone,
+        color: Colors.indigoAccent,
+      );
     }
-    return Icon(Icons.ac_unit);
+    return const Icon(Icons.ac_unit);
   }
 }

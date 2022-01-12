@@ -37,7 +37,7 @@ class PixAreaFormWidget extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          store.getPixIcon(i),
+                          store.getPixIcon(i + 1),
                           Text('${store.typesPix[i].name}')
                         ],
                       ),
