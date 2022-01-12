@@ -23,29 +23,25 @@ class PixAreaFormWidget extends StatelessWidget {
           const SizedBox(
             height: 40,
           ),
-          Row(
-            children: [
-              SizedBox(
-                height: _height * 0.1,
-                width: _width,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: store.typesPix.length,
-                  itemBuilder: (_, i) => Card(
-                    child: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          store.getPixIcon(i + 1),
-                          Text('${store.typesPix[i].name}')
-                        ],
-                      ),
-                    ),
+          SizedBox(
+            height: _height * 0.1,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              shrinkWrap: true,
+              itemCount: store.typesPix.length,
+              itemBuilder: (_, i) => Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      store.getPixIcon(i + 1),
+                      Text('${store.typesPix[i].name}'),
+                    ],
                   ),
                 ),
               ),
-            ],
+            ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),

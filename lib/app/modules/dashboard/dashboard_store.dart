@@ -40,15 +40,30 @@ abstract class _DashboardStoreBase with Store {
   @action
   Icon getIcon(int id) {
     if (id == 1) {
-      return Icon(Icons.card_membership_rounded);
+      return Icon(
+        Icons.card_membership_rounded,
+        color: Colors.indigoAccent,
+      );
     } else if (id == 2) {
-      return Icon(Icons.send_to_mobile);
+      return Icon(
+        Icons.send_to_mobile,
+        color: Colors.indigoAccent,
+      );
     } else if (id == 3) {
-      return Icon(Icons.transfer_within_a_station);
+      return Icon(
+        Icons.transfer_within_a_station,
+        color: Colors.indigoAccent,
+      );
     } else if (id == 4) {
-      return Icon(Icons.monetization_on);
+      return Icon(
+        Icons.monetization_on,
+        color: Colors.indigoAccent,
+      );
     } else if (id == 5) {
-      return Icon(Icons.payments_rounded);
+      return Icon(
+        Icons.payments_rounded,
+        color: Colors.indigoAccent,
+      );
     }
     return Icon(Icons.ac_unit);
   }
